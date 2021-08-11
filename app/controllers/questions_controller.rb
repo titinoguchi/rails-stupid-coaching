@@ -10,6 +10,8 @@ class QuestionsController < ApplicationController
     @answer = begin
       if @question == "i am going to work right now!"
         "Great!"
+      elsif @question.blank
+        @answer = "i can't hear you!"
       elsif @question.end_with?("?")
         "Silly question, get dressed and go to work!"
       else
